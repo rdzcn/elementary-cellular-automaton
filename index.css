@@ -64,7 +64,7 @@
 
 .btn.generate {
   position: absolute;
-  top: 44px;
+  top: 62px;
   right: 32px;
 }
 
@@ -87,4 +87,16 @@
 
 .direction:last-child {
   margin-left: 18px;
+}
+
+label {
+  height: 36px;
+}
+
+.info {
+  text-decoration: none;
+  margin-left: 18px;
+  background: #7f8ff4;
+  padding: 3px 8px;
+  border-radius: 50%;
 }
