@@ -15,13 +15,15 @@
   <body>
     <main class="container">
       <div class="settings">
-        <div class="rule-input-container">
-          <label for="rule-input">Rule</label>
-          <input type="number" id="rule-input" value="30" min="0" max="255" />
-        </div>
+        <button class="btn primary direction" id="prev">Previous rule</button>
+        <form class="rule-input-container">
+          <label for="rule-input">Automaton rule between 0 and 255</label>
+          <input type="number" placeholder="0 - 255" id="rule-input" value="30" min="0" max="255" />
+          <button id="generate" class="btn primary generate uppercase" type="submit">Generate</button>
+        </form>
         <div class="buttons">
-          <button id="generate" type="submit">Generate</button>
         </div>
+        <button class="btn primary direction" id="next">Next rule</button>
       </div>
       <div class="automaton-container">
         <canvas id="automata"></canvas>

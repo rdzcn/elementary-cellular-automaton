@@ -6,7 +6,6 @@ function convertToBinary(number) {
   }
   return binary;
 }
-
 // End of utility functions
 
 //Global variables
@@ -17,7 +16,6 @@ const totalCells = window.innerWidth / squareWidth;
 
 let rule = 0;
 let cells = [];
-
 // End of global variables
 
 
@@ -44,21 +42,19 @@ const ruleInput = document.querySelector("#rule-input");
 const generateButton = document.querySelector("#generate");
 
 generateButton.onclick = 
-  function () {
+  function (event) {
+    event.preventDefault();
     let canvas = document.querySelector("#automata");
     canvas.style.backgroundColor = "#fff";
     canvas.width = window.innerWidth - 15;
-    canvas.height = 1600;
+    canvas.height = 960;
     rule = +ruleInput.value;
     const ctx = canvas.getContext("2d");
-
-    console.log("onClick cells", cells)
 
     for (let i = 0; i < totalCells; i++) {
       if (i === Math.ceil(totalCells / 2)) {
         cells[i] = 1;
       } else cells[i] = 0;
-      // cells[i] = Math.floor(getRandomNumber(0, 2));
     }
 
     let row = 0;
