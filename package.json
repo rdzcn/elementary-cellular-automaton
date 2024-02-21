@@ -1,18 +1,19 @@
 {
   "name": "elementary-cellular-automaton",
   "version": "1.0.0",
-  "description": "",
+  "description": "Elementary Cellular Automaton in JavaScript",
   "main": "index.js",
-  "keywords": ["cellular automaton", "elementary cellular automaton", "vite", "javascript", "node.js"],
+  "type": "module",
+  "keywords": [
+    "cellular automaton",
+    "elementary cellular automaton",
+    "vite",
+    "javascript",
+    "node.js"
+  ],
   "author": "rdzcn",
   "license": "MIT",
- "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "format": "npx prettier --write ."
-  },
-  "devDependencies": {
-    "vite": "^5.1.3"
+  "scripts": {
+    "start": "node server.js"
   }
 }
