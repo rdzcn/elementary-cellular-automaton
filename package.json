@@ -1,0 +1,18 @@
+{
+  "name": "elementary-cellular-automaton",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": ["cellular automaton", "elementary cellular automaton", "vite", "javascript", "node.js"],
+  "author": "rdzcn",
+  "license": "MIT",
+ "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "format": "npx prettier --write ."
+  },
+  "devDependencies": {
+    "vite": "^5.1.3"
+  }
+}

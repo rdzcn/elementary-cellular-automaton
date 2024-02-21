@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Cellular automaton</title>
+  </head>
+  <body>
+    <main class="container">
+      <div class="settings">
+        <div class="rule-input-container">
+          <label for="rule-input">Rule</label>
+          <input type="number" id="rule-input" value="30" min="0" max="255" />
+        </div>
+        <div class="buttons">
+          <button id="generate" type="submit">Generate</button>
+        </div>
+      </div>
+      <div class="automaton-container">
+        <canvas id="automata"></canvas>
+      </div>
+    </main>
+    <script type="module" src="/index.js"></script>
+  </body>
+</html>
