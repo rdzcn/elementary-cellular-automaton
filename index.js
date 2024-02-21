@@ -99,7 +99,3 @@ nextButton.onclick = (event) => {
   ruleInput.value = +ruleInput.value + 1;
   generateAutomaton(+ruleInput.value)
 };
-
-console.log("isGenerating", isGenerating);
-console.log("rule input", ruleInput.value);
-console.log("rule", rule);
