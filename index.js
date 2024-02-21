@@ -16,6 +16,7 @@ const totalCells = window.innerWidth / squareWidth;
 
 let rule = 0;
 let cells = [];
+let isGenerating = false;
 // End of global variables
 
 
@@ -38,17 +39,15 @@ function generateCell() {
   cells = nextGen;
 }
 
-const ruleInput = document.querySelector("#rule-input");
-const generateButton = document.querySelector("#generate");
-
-generateButton.onclick = 
-  function (event) {
-    event.preventDefault();
+function generateAutomaton(automatonRule) {
+    console.log("isGenerating", isGenerating);
+    if (isGenerating) return;
+    isGenerating = true;
     let canvas = document.querySelector("#automata");
     canvas.style.backgroundColor = "#fff";
     canvas.width = window.innerWidth - 15;
     canvas.height = 960;
-    rule = +ruleInput.value;
+    rule = automatonRule;
     const ctx = canvas.getContext("2d");
 
     for (let i = 0; i < totalCells; i++) {
@@ -70,6 +69,8 @@ generateButton.onclick =
       generateCell();
       if (row < canvas.height / squareHeight) {
         requestAnimationFrame(animate);
+      } else {
+        isGenerating = false;
       }
       row += 1;
     };
@@ -77,3 +78,28 @@ generateButton.onclick =
     animate();
   }
 
+const ruleInput = document.querySelector("#rule-input");
+const generateButton = document.querySelector("#generate");
+const prevButton = document.querySelector("#prev");
+const nextButton = document.querySelector("#next");
+
+generateButton.onclick = (event) => {
+  event.preventDefault();
+  generateAutomaton(+ruleInput.value)
+};
+prevButton.onclick = (event) => {
+  event.preventDefault();
+  if (isGenerating) return;
+  ruleInput.value = +ruleInput.value - 1;
+  generateAutomaton(+ruleInput.value)
+}
+nextButton.onclick = (event) => {
+  event.preventDefault();
+  if (isGenerating) return;
+  ruleInput.value = +ruleInput.value + 1;
+  generateAutomaton(+ruleInput.value)
+};
+
+console.log("isGenerating", isGenerating);
+console.log("rule input", ruleInput.value);
+console.log("rule", rule);
