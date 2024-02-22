@@ -113,6 +113,10 @@ label {
   position: absolute;
   right: -48px;
   top: 50%;
+
+  @media (pointer: coarse) {
+    right: 50%
+  }
 }
 
 @keyframes rotate {
