@@ -29,6 +29,7 @@
   align-items: center;
   width: 100%;
   margin-bottom: 18px;
+  position: relative;
 }
 
 .rule-input-container {
@@ -99,4 +100,23 @@ label {
   background: #7f8ff4;
   padding: 3px 8px;
   border-radius: 50%;
+}
+
+.loading {
+  height: 0;
+  width: 0;
+  padding: 15px;
+  border: 6px solid #ccc;
+  border-right-color: #888;
+  border-radius: 22px;
+  animation: rotate 1s infinite linear;
+  position: absolute;
+  right: -48px;
+  top: 50%;
+}
+
+@keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
 }

@@ -71,6 +71,7 @@ function generateAutomaton(automatonRule) {
         requestAnimationFrame(animate);
       } else {
         isGenerating = false;
+        loadingContainer.classList.remove("loading");
       }
       row += 1;
     };
@@ -83,19 +84,28 @@ const generateButton = document.querySelector("#generate");
 const prevButton = document.querySelector("#prev");
 const nextButton = document.querySelector("#next");
 
+const formContainer = document.querySelector("form");
+const loadingContainer = document.createElement("div");
+formContainer.appendChild(loadingContainer)
+
 generateButton.onclick = (event) => {
   event.preventDefault();
+  loadingContainer.classList.add("loading");
   generateAutomaton(+ruleInput.value)
 };
+
 prevButton.onclick = (event) => {
   event.preventDefault();
   if (isGenerating) return;
+  loadingContainer.classList.add("loading");
   ruleInput.value = +ruleInput.value - 1;
   generateAutomaton(+ruleInput.value)
 }
+
 nextButton.onclick = (event) => {
   event.preventDefault();
   if (isGenerating) return;
+  loadingContainer.classList.add("loading");
   ruleInput.value = +ruleInput.value + 1;
   generateAutomaton(+ruleInput.value)
 };
