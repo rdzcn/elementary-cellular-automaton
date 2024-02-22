@@ -44,7 +44,6 @@ function generateCell() {
 }
 
 function generateAutomaton(automatonRule) {
-    console.log("isGenerating", isGenerating);
     if (isGenerating) return;
     isGenerating = true;
     let canvas = document.querySelector("#automata");
