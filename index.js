@@ -6,6 +6,10 @@ function convertToBinary(number) {
   }
   return binary;
 }
+
+export function getRandomNumber(min, max) {
+  return Math.random() * (max - min) + min;
+}
 // End of utility functions
 
 //Global variables
@@ -51,9 +55,10 @@ function generateAutomaton(automatonRule) {
     const ctx = canvas.getContext("2d");
 
     for (let i = 0; i < totalCells; i++) {
-      if (i === Math.ceil(totalCells / 2)) {
-        cells[i] = 1;
-      } else cells[i] = 0;
+      // if (i === Math.ceil(totalCells / 2)) {
+      //   cells[i] = 1;
+      // } else cells[i] = 0;
+      cells[i] = Math.floor(getRandomNumber(0, 2));
     }
 
     let row = 0;
